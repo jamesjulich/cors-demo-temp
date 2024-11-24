@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CORS Demo</title>
+        <script>
+            // This is a complex request, so it will be preflighted.
+            // The preflight will fail because the server does not
+            // respond with any CORS headers that would otherwise allow
+            // the request to go through.
+            fetch("http://localhost:3000/", {
+                headers: {
+                    'best-cheese-curds': 'state street brats'
+                },
+            })
+        </script>
+    </head>
+    <body>
+        <h1>CORS Demo</h1>
+        <p>This demo makes a complex, cross-origin request to a trusted server (localhost:3000). So, the request is preflighted.</p>
+        <p>Because the trusted server does not include CORS headers (which tell the browser to relax same-origin policy restrictions), the browser blocks this cross-origin request.</p>
+    </body>
+</html>
