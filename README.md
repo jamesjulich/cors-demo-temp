@@ -15,4 +15,4 @@ To run the trusted server (which will start on localhost:3000)
 To run the untrusted server (which will start on localhost:4000)
 ```node server-untrusted```
 
-Then, navigate to localhost:4000. You will see that because no CORS headers were included by the trusted server, the preflight for the request to localhost:3000/ fails.
+Then, navigate to localhost:4000. Check your network tab. You will see a GET and OPTIONS request to localhost:3000. You will see that because no CORS headers were included by the trusted server (localhost:3000), the preflight for the request to localhost:3000/ fails.
